@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main class="todo-app">
+        <header id="todo-header">
+            <div class="profile">
+                <img src="./img/Ellipse 395.png" alt="">
+                <h2>VinoFernando | ...</h2>
+            </div>
+                <div class="todo-meta">
+                <!-- bisa isi tanggal atau tombol ekspor nanti -->
+                    <h3 id="time"></h3>
+                </div>
+            <div class="filters" role="tablist" aria-label="Filter tugas">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="active">Aktif</button>
+                <button class="filter-btn" data-filter="completed">Selesai</button>
+            </div>
+            <div class="todo-count" id="todo-count">0 tugas tersisa</div>
+        </header>
+        <form action="" id="todo-form">
+                <input type="text" placeholder="add new task..." id="todo-input">
+                <select name="" id="todo-level">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit" id="todo-submit">Add</button>
+        </form>
+
+        <section aria-live="polite">
+          <ul class="todo-list" id="todo-list"></ul>
+          <div class="todo-empty" hidden="">
+            Belum ada tugas — tambahkan tugas pertamamu!
+          </div>
+    </section>
+    <script src="script.js"></script>
+    </main>
+</body>
+</html>
