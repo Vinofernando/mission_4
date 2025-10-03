@@ -83,6 +83,10 @@ body{
     margin: 0   ;
 }
 /* input and submit */
+#todo-form{
+    margin: 10px 0;
+}
+
 #todo-input{
     width: 70%;
     padding:12px 14px;
@@ -116,7 +120,7 @@ body{
 }
 
 
-#todo-submit{
+#todo-submit, .todo-delete-all{
     width: 30%;
     padding:12px 14px;
     border-radius:10px;
@@ -128,6 +132,15 @@ body{
     min-width:96px;
 }
 
+.todo-delete-all{
+    width: 100%;
+    background-color: var(--danger);
+    transition: all ease 0.3s;
+}
+
+.todo-delete-all:hover{
+    background-color: red;
+}
 #todo-submit:active{
     transform:translateY(1px)
 }

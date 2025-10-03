@@ -18,9 +18,9 @@
                     <h3 id="time"></h3>
                 </div>
             <div class="filters" role="tablist" aria-label="Filter tugas">
-                <button class="filter-btn active" data-filter="all">Semua</button>
-                <button class="filter-btn" data-filter="active">Aktif</button>
-                <button class="filter-btn" data-filter="completed">Selesai</button>
+                <button class="filter-btn active"  data-filter="all">Semua</button>
+                <button class="filter-btn"  data-filter="active">Aktif</button>
+                <button class="filter-btn"  data-filter="completed">Selesai</button>
             </div>
             <div class="todo-count" id="todo-count">0 tugas tersisa</div>
         </header>
@@ -34,6 +34,10 @@
                 <button type="submit" id="todo-submit">Add</button>
         </form>
 
+        <div>
+            <button class="todo-delete-all" id="todo-delete-all">Delete all</button>
+        </div>
+        
         <section aria-live="polite">
           <ul class="todo-list" id="todo-list"></ul>
           <div class="todo-empty" hidden="">
