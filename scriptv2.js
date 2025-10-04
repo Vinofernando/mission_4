@@ -10,6 +10,14 @@ const filterBtn = document.querySelectorAll(".filter-btn");
 let taskList = []
 let filterState = "all"
 
+// tampilkan tanggal
+function todoNewDate () {
+  const today = new Date();
+  const options = { weekday: 'long', day: 'numeric', month: 'long' };
+  const formatted = today.toLocaleDateString('id-ID', options);
+  newDate.innerHTML = formatted
+}
+
 // render / tampilkan data
 function addTask () {
   todoList.innerHTML = ''
@@ -21,8 +29,10 @@ function addTask () {
   });
 
   filteredTask.forEach(item => {
-    // ambil index asli di taskList (supaya delete/update tidak salah saat difilter)
     const realIndex = taskList.indexOf(item);
+    const today = new Date();
+    const options = { weekday: 'long', day: 'numeric', month: 'long' };
+    const formatted = today.toLocaleDateString('id-ID', options);
 
     const isiList = document.createElement('li')
     isiList.setAttribute('class', 'todo-item')
@@ -32,7 +42,7 @@ function addTask () {
       <label class="todo-row">
         <input type="checkbox" class="todo-checkbox" data-index="${realIndex}" ${item.done ? "checked" : ""}>
         <span class="todo-text">
-          ${item.text} 
+          ${item.text} (${formatted})
           <span class="${item.level === "low" ? "todo-level-low" : item.level === "medium" ? "todo-level-medium" : "todo-level-high"}">${item.level}</span>
         </span>
       </label>
@@ -46,14 +56,6 @@ function addTask () {
 
   // tampilkan jumlah sesuai filter
   todoCount.innerHTML = `${filteredTask.length} tugas ditampilkan`
-}
-
-// tampilkan tanggal
-function todoNewDate () {
-  const today = new Date();
-  const options = { weekday: 'long', day: 'numeric', month: 'long' };
-  const formatted = today.toLocaleDateString('id-ID', options);
-  newDate.innerHTML = formatted
 }
 
 // tambah task baru
